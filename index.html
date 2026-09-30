@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeviceRecover Kenya</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #0b3d2e;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        button {
+            background: #0b3d2e;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📱 DeviceRecover Kenya</h1>
+    <p>Helping communities report and recover lost or stolen devices.</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>🔎 Check a Device</h2>
+
+        <label>IMEI or Serial Number</label>
+        <input type="text" id="deviceNumber"
+               placeholder="Enter IMEI or serial number">
+
+        <button onclick="checkDevice()">Check Device</button>
+
+        <p id="result"></p>
+    </div>
+
+    <div class="card">
+        <h2>🚨 Report a Stolen Device</h2>
+
+        <label>Device Type</label>
+        <select id="deviceType">
+            <option>Mobile Phone</option>
+            <option>Laptop</option>
+            <option>Tablet</option>
+            <option>Other</option>
+        </select>
+
+        <label>IMEI / Serial Number</label>
+        <input type="text" id="reportNumber"
+               placeholder="Enter device identifier">
+
+        <button onclick="reportDevice()">Submit Report</button>
+
+        <p id="reportResult"></p>
+    </div>
+
+</div>
+
+<footer>
+    DeviceRecover Kenya © 2026
+</footer>
+
+<script>
+function checkDevice() {
+    const number = document.getElementById("deviceNumber").value;
+
+    if (number.trim() === "") {
+        document.getElementById("result").innerText =
+            "Please enter an IMEI or serial number.";
+        return;
+    }
+
+    document.getElementById("result").innerText =
+        "Demo system: no stolen-device database is connected yet.";
+}
+
+function reportDevice() {
+    const number = document.getElementById("reportNumber").value;
+
+    if (number.trim() === "") {
+        document.getElementById("reportResult").innerText =
+            "Please enter the device identifier.";
+        return;
+    }
+
+    document.getElementById("reportResult").innerText =
+        "Demo report received. Database integration will be added next.";
+}
+</script>
+
+</body>
+</html>
